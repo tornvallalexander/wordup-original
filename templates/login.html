@@ -1,0 +1,40 @@
+
+
+{% extends "layout.html" %}
+
+{% from "form_helper.html" import displayField %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+    <div class="body-login">
+
+        <div class="right-area">
+            <img src="/static/images/login.png" alt="Productivity">
+        </div>
+
+        <form action="{{ url_for('login') }}" , method="POST" class="form-login">
+            <p>Login - and be more productive with faster typing</p>
+            {{ displayField(form.username, "Username", autocomplete="off", autofocus="true") }}
+            {{ displayField(form.password, "Password", type="password")}}
+        
+            {{ form.submit_button }}
+            {{ form.csrf_token }}
+        </form>
+
+        
+        
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const formInputs = document.querySelectorAll(".form-individual")
+
+            
+
+        })
+    </script>
+{% endblock %}

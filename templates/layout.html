@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title> {% block title %} {% endblock %} - WordUp</title>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <a class="text-logo" href="{{ url_for('index') }}">WordUp</a>
+            
+        </div>
+
+        <ul class="nav-links">
+            <li>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </li>
+            <li>
+                <a href="{{ url_for('login') }}">Login</a>
+            </li>
+            <li>
+                <a href="{{ url_for('register') }}">Register</a>
+            </li>
+            <li>
+                <a href="{{ url_for('typing') }}">Start typing</a>
+            </li>
+        </ul>
+    </nav>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <!-- returns a list of tuple of messages: [(category, message)]-->
+            <div class="msgs">
+                <p class="flashed-msg">{{ messages[0][1] }} <span class="closebtn">&times;</span></p>
+                <!-- works because flash works by adding element to list then deleting it -->
+        
+            </div>
+        
+        {% endif %}
+        
+    {% endwith %}
+
+    {% block content %} 
+    
+    {% endblock %}
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (document.querySelector(".msgs")) {
+                const msgSection = document.querySelector(".msgs")
+                const closeBtn = document.querySelector(".closebtn")
+                closeBtn.addEventListener("click", () => {
+                    // const flashedMsgs = document.querySelector(".msgs")
+                    msgSection.remove()
+                })
+                let msgSeconds = 4
+
+                setIntervalX(() => {
+                    msgSeconds--;
+                    
+                    if (msgSeconds === 0) {
+                        msgSection.remove()
+                    }
+                }, 1000, 4)
+
+            }
+
+
+            function setIntervalX(callback, delay, repetitions) {
+                var x = 0;
+                var intervalID = window.setInterval(function () {
+
+                    callback();
+
+                    if (++x === repetitions) {
+                        window.clearInterval(intervalID);
+                    }
+                }, delay);
+            }
+            
+        })
+    </script>
+
+</body>
+</html>

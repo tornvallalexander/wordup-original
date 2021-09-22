@@ -1,0 +1,326 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar */
+
+nav {
+    background-color: #222222;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 12vh;
+    color: white;
+}
+
+body {
+    background-color: #120851;
+    background-image: url(/static/images/typing-back.jpg);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: rgb(202, 202, 202);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.nav-links li a:hover {
+    color: white;
+}
+
+
+.text-logo {
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    color: rgb(8, 155, 253);
+    text-decoration: none;
+}
+
+
+/* classes for correct / incorrect typing */
+
+.correct {
+    background-color: rgb(72, 255, 145);
+}
+
+.incorrect {
+    background-color: rgb(255, 61, 110);
+    text-decoration: underline;
+}
+
+.closebtn {
+    cursor: pointer;
+}
+
+
+/* classes for the progress bar */
+
+.myProgress {
+    width:100%;
+    background-color:rgba(128, 128, 128, 0);
+    height:50px;
+    border: 2px solid rgb(8, 155, 253);
+    border-radius: 12px;
+}
+
+.myBar {
+    width:0%;
+    background-color:rgb(72, 255, 145);
+
+}
+
+
+.body-section {
+    
+    width: 80%;
+    align-items: center;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+
+.progress-bar {
+    align-items: center;
+    text-align: center;
+}
+
+
+.quote-input {
+    height: 30px;
+    border: 2px solid rgb(8, 155, 253);
+    font-size: 20px;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+
+#quoteDisplay {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+
+/* .wpm-display {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+} */
+
+
+#currentWpm {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: rgb(72, 255, 145);
+    text-align: center;
+}
+
+
+.timesContainer {
+    color: white;
+}
+
+
+.countdown {
+    position: relative;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    width: 400px;
+    height: 100px;
+    padding-top: 20px;
+    background-color: rgb(255, 61, 110);    
+}
+
+
+#myPercentage {
+    color: rgb(8, 155, 253);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+#timeLeft {
+    color: white;
+    margin: auto;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+
+.quoteInputContainer {
+    align-items: center;
+    text-align: center;
+}
+
+
+.pastWpms,
+.authorDisplayContainer {
+    color: white;
+    font-weight: bold;
+}
+
+
+.authorDisplayContainer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.pastWpms {
+    font-size: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.textWpms {
+    font-size: 40px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* forms */
+.body-login,
+.body-register {
+    background-image: url(/static/images/background.jpg);
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+.right-area {
+    width: 70%;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+
+}
+
+
+.right-area img {
+    width: 500px;
+    
+}
+
+.form-login,
+.form-register {
+    width: 30%;
+    min-height: 88vh;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    padding-top: 100px;   
+}
+
+
+.form-register {
+    padding-top: 40px;
+}
+
+.form-login p,
+.form-register p {
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: 700;
+    background: -webkit-linear-gradient(rgb(1, 255, 200), rgb(8, 155, 253));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+
+.form-individual {
+    
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-bottom: 2px solid rgb(8, 155, 253);
+}
+
+#submit_button {
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 260px;
+    border: none;
+    color: white;
+    background-color: rgb(8, 155, 253);
+}
+
+
+#submit_button:hover {
+    cursor: pointer;
+}
+
+
+
+
+
+/* form error messages, normal messages */
+
+.error {
+    color: rgb(255, 61, 110);
+}
+
+
+.msgs {
+    position: relative;
+    color: white;
+    text-align: center;
+    background-color: black;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+
+}
+
+
+.flashed-msg {
+    margin-right: 10px;
+}
+
+
+.closebtn {
+    color: rgb(255, 61, 110);
+}
+
+
+.not-found {
+    display: grid;
+    height: 100%;
+}
+
+
+.img-not-found {
+    min-width: 100%;
+    max-height: 100vh;
+    margin: auto;
+}

@@ -1,0 +1,34 @@
+
+
+{% extends "layout.html" %}
+
+{% from "form_helper.html" import displayField %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block content %}
+    <div class="body-register">
+
+        <div class="right-area">
+            <img src="/static/images/register.png" alt="Faster WPM">
+        </div>
+        
+
+        <form action="{{ url_for('register') }}" , method="POST" class="form-register">
+            <p>Register - and be more productive with a higher WPM</p>
+            {{ displayField(form.email, "Email", autofocus="true", type="email") }}
+            {{ displayField(form.username, "Username") }}
+            {{ displayField(form.password, "Password", type="password")}}
+            {{ displayField(form.confirm_pswd, "Confirm Password", type="password")}}
+        
+            {{ form.submit_button }}
+            {{ form.csrf_token }}
+        </form>
+
+        
+    </div>
+
+    
+{% endblock %}

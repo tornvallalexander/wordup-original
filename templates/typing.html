@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+    
+
+{% block content %}
+
+    
+
+    <div class="body-section">
+
+        <p class="textWpms">Your Average Past WPMs:</p>
+
+        <div class="pastWpms"></div>
+
+        <div class="countdown">
+            <div class="timeLeftContainer">
+                <p id="timeLeft">Countdown time</p>
+            </div>
+        </div>
+
+        <div class="wpm-display">
+            <p id="currentWpm">0.00</p>
+            <!-- <p id="correct-percentage">0.00</p> -->
+        </div>
+
+        <div class="progress-bar">
+            <div class="myProgress" id="myProgress">
+                <div class="myBar" id="myBar">
+                    <span id="myPercentage">0.00%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="containerQuotes">
+            <div id="quoteDisplay"></div>
+
+            <div class="authorDisplayContainer">
+                <p id="authorDisplay"></p>
+            </div>
+        
+        
+        
+            <div class="quoteInputContainer">
+                <input class="quote-input" id="quoteInput" type="text" disabled>
+            </div>
+        </div>
+        
+        
+        
+        
+
+        
+
+    </div>
+
+    
+    <script>
+    	const username = `{{ username }}`
+    </script>
+
+    <!-- <script src="/static/scripts/socketio.js"></script> -->
+    <script src="static\scripts\index.js"></script>
+   
+
+{% endblock %}
